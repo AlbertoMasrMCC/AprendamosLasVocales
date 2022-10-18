@@ -1,0 +1,32 @@
+header
+{
+
+    width: 100%;
+    margin-bottom: 10px;
+
+}
+
+footer
+{
+
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 15px;
+    
+}
+
+.imagenesVocales
+{
+
+    width: 300px;
+    height: auto;
+
+}
+
+#jugar:hover
+{
+
+    content: url(./iconos/arrow-right-circle-fill.svg);
+
+}
