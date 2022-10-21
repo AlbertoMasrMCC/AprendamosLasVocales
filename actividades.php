@@ -21,7 +21,6 @@
 
     <!-- Propio -->
     <link rel="stylesheet" href="./css/estilos.css">
-    <script src="./js/eventos.js"></script>
         
     <title>Aprendamos las vocales</title>
 
@@ -32,15 +31,97 @@
 
         <div class="container-fluid">
 
-            <span class="navbar-brand mb-0 h1">Aprendamos las vocales</span>
+            <div style="width: 40%;">
+
+                <span class="navbar-brand mb-0 h1">Aprendamos las vocales</span>
+
+            </div>
+
+            <div class="d-flex justify-content-around" style="width: 40%;">
+
+                <div class="d-flex align-items-center">
+
+                    <a href="" data-bs-toggle="modal" data-bs-target="#ayudasModal" onclick="ayudas()">
+                        <img src="./css/iconos/question-circle.svg" id="iAyuda" alt="iAyuda" width="25px" height="25">
+                    </a>
+                    <p id="ayuda" class="ms-2 pt-3">0</p>
+                
+                </div>
+
+                <div class="d-flex align-items-center">
+
+                    <img src="./css/iconos/bug.svg" id="iError" alt="iError" width="25px" height="25">
+                    <p id="error" class="ms-2 pt-3">0</p>
+                
+                </div>
+
+                <div class="d-flex align-items-center">
+
+                    <img src="./css/iconos/clock.svg" id="iTiempo" alt="iTiempo" width="25px" height="25">
+                    <p id="tiempo" class="ms-2 pt-3">00:00</p>
+                
+                </div>
+
+            </div>
+            
         </div>
 
     </nav>
 
 </header>
-<body onload="iniciar()">
+<body onload="reloj()">
 
-    
+    <!-- Modal -->
+    <div class="modal fade" id="ayudasModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Ayudas</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container text-center" style="height: 80vh;">
+
+        <div class="row align-items-center" style="height: 10%;">
+
+            <div class="col ms-4 me-4 text-center">
+
+                <audio src="./multimedia/audios/Aa.ogg" controls></audio>
+
+            </div>
+
+        </div>
+
+        <div class="row align-items-center" style="height: 80%;">
+
+            <div class="col ms-4 me-4 text-center">
+
+                <img src="./multimedia/imagenes/Aa.png" alt="" width="300px" height="300px">
+
+            </div>
+
+        </div>
+
+        <div class="row align-items-center" style="height: 10%;">
+
+            <div class="col ms-4 me-4 text-center">
+
+                <button type="button" class="btn btn-outline-dark" onclick="aplicarLogicaDifusa()">Enviar</button>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </body>
 <footer>
@@ -52,4 +133,6 @@
     </div>
 
 </footer>
+<!-- Propio -->
+<script src="./js/eventos.js"></script>
 </html>

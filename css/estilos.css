@@ -1,3 +1,12 @@
+body
+{
+
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 60px;
+
+}
+
 header
 {
 
@@ -9,10 +18,10 @@ header
 footer
 {
 
-    position: relative;
+    position: absolute;
     bottom: 0;
     width: 100%;
-    margin-top: 15px;
+    margin-top: 60px;
     
 }
 
@@ -24,9 +33,16 @@ footer
 
 }
 
-#jugar:hover
+#iJugar:hover
 {
 
     content: url(./iconos/arrow-right-circle-fill.svg);
+
+}
+
+#iAyuda:hover
+{
+
+    content: url(./iconos/question-circle-fill.svg);
 
 }
