@@ -16,18 +16,6 @@
     <title>Aprendamos las vocales</title>
 
 </head>
-<header>
-
-    <nav class="navbar bg-light">
-
-        <div class="container-fluid">
-
-            <span class="navbar-brand mb-0 h1">Aprendamos las vocales</span>
-        </div>
-
-    </nav>
-
-</header>
 <body>
 
     <p class="h1 text-center">¡JUGUEMOS A APRENDER!</p>
@@ -38,7 +26,7 @@
 
             <div class="row justify-content-center">
 
-                <div class="card border-dark m-3 shadow col-2" style="width: 330px;">
+                <div class="card border-dark ms-3 mt-3 shadow col-2 tarjeta">
 
                     <img src="./multimedia/imagenes/Aa.png" class="card-img-top imagenesVocales ms-2 me-2" alt="Vocal A">
 
@@ -50,7 +38,7 @@
 
                 </div>
 
-                <div class="card border-dark ms-3 mt-3 shadow col-2" style="width: 330px;">
+                <div class="card border-dark ms-3 mt-3 shadow col-2 tarjeta">
 
                     <img src="./multimedia/imagenes/Ee.png" class="card-img-top imagenesVocales ms-2 me-2" alt="Vocal E">
 
@@ -62,7 +50,7 @@
 
                 </div>
 
-                <div class="card border-dark ms-3 mt-3 shadow col-2" style="width: 330px;">
+                <div class="card border-dark ms-3 mt-3 shadow col-2 tarjeta">
 
                     <img src="./multimedia/imagenes/Ii.png" class="card-img-top imagenesVocales ms-2 me-2" alt="Vocal I">
                     
@@ -78,7 +66,7 @@
 
             <div class="row justify-content-center">
 
-                <div class="card border-dark ms-3 mt-3 shadow col-2" style="width: 330px;">
+                <div class="card border-dark ms-3 mt-3 shadow col-2 tarjeta">
 
                     <img src="./multimedia/imagenes/Oo.png" class="card-img-top imagenesVocales ms-2 me-2" alt="Vocal O">
 
@@ -90,7 +78,7 @@
 
                 </div>
 
-                <div class="card border-dark ms-3 mt-3 shadow col-2" style="width: 330px;">
+                <div class="card border-dark ms-3 mt-3 shadow col-2 tarjeta">
 
                     <img src="./multimedia/imagenes/Uu.png" class="card-img-top imagenesVocales ms-2 me-2" alt="Vocal U">
 

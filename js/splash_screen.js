@@ -1,9 +1,10 @@
 let contador    = document.getElementById("contador")
 let cuerpo      = document.body
 
-function redireccionarActividades(){
+function redireccionarActividades()
+{
 
-    window.location.href = "actividades.php"
+    window.location.href = "actividades.php?complejidad=1"
 
 }
 
@@ -37,7 +38,7 @@ function cambiarTextoFondo(segundo){
 
         default:
             mensaje = '¡YA!'
-            color   = 'yellow'
+            color   = 'gray'
         break
 
     }

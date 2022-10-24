@@ -3,7 +3,9 @@ body
 
     position: relative;
     min-height: 100vh;
-    padding-bottom: 60px;
+    padding-bottom: 200px;
+    background-image: url("../multimedia/imagenes/aula.png");
+    background-size: 100% 100%;
 
 }
 
@@ -44,5 +46,21 @@ footer
 {
 
     content: url(./iconos/question-circle-fill.svg);
+
+}
+
+.tarjeta
+{
+
+    width: 330px;
+    opacity: 95%;
+
+}
+
+.tarjetaRespuesta
+{
+
+    width: 200px;
+    opacity: 95%;
 
 }
