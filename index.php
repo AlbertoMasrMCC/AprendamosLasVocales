@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="./multimedia/imagenes/logo.png">
     
     <!-- Bootstrap -->
     <link rel="stylesheet" href="./css/bootstrap/bootstrap.min.css">
@@ -18,7 +20,7 @@
 </head>
 <body>
 
-    <p class="h1 text-center">¡JUGUEMOS A APRENDER!</p>
+    <p class="h1 text-center mt-3">¡JUGUEMOS A APRENDER!</p>
 
     <div class="row justify-content-center" style="width: 99%">
 
@@ -105,7 +107,7 @@
 </body>
 <footer>
 
-    <div class="bg-light text-center p-1">
+    <div class="bg-dark fw-bold text-white text-center p-1">
 
         <span class="mb-0">AprendamosABC. <?php echo date('Y');  ?></span>
 

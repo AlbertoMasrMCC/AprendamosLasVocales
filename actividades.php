@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="./multimedia/imagenes/logo.png">
     
     <!-- Lógica difusa -->
     <script src="./js/logicaDifusa/fuzzy.min.js"></script>
@@ -34,13 +36,13 @@
 
 <header>
 
-    <nav class="navbar bg-light">
+    <nav class="navbar">
 
         <div class="container-fluid">
 
             <div style="width: 40%;">
 
-                <span class="navbar-brand mb-0 h1">Aprendamos las vocales</span>
+                <img src="./multimedia/imagenes/logo.png" alt="AprendamosABC" width="100" height="100">
 
             </div>
 
@@ -94,7 +96,150 @@
                 </div>
 
                 <div class="modal-body">
-                    ...
+                    
+                    <?php
+
+                    if($complejidad == "1")
+                    {
+
+                    ?>
+
+                    <div class="text-center">
+
+                        <audio id="ayuda1" controls></audio>
+
+                    </div>
+
+                    <?php
+
+                    }
+                        
+                    if($complejidad == "2")
+                    {
+
+                    ?>
+
+                    <div class="text-center">
+
+                        <p id="ayuda1">Se deshabilitó una de las imagenes</p>
+
+                    </div>
+
+                    <?php
+
+                    }
+                        
+                    if($complejidad == "3")
+                    {
+
+                    ?>
+
+                        <div class="container">
+
+                            <div class="row">
+
+                                <div class="d-flex justify-content-around">
+
+                                    <p class="mb-0 align-self-center" id="PAyuda1"></p>
+                                    <audio src="" class="mb-2" id="AAyuda1" controls></audio>
+
+                                </div>
+
+                                <hr>
+                                
+                                <div class="d-flex justify-content-around">
+
+                                    <p class="mb-0 align-self-center" id="PAyuda2"></p>
+                                    <audio src="" class="mb-2" id="AAyuda2" controls></audio>
+
+                                </div>
+
+                                <hr>
+
+                                <div class="d-flex justify-content-around">
+
+                                    <p class="mb-0 align-self-center" id="PAyuda3"></p>
+                                    <audio src="" class="mb-2" id="AAyuda3" controls></audio>
+
+                                </div>
+
+                                <hr>
+
+                                <div class="d-flex justify-content-around">
+
+                                    <p class="mb-0 align-self-center" id="PAyuda4"></p>
+                                    <audio src="" class="mb-2" id="AAyuda4" controls></audio>
+
+                                </div>
+
+                                <hr>
+
+                                <div class="d-flex justify-content-around">
+
+                                    <p class="mb-0 align-self-center" id="PAyuda5"></p>
+                                    <audio src="" class="mb-2" id="AAyuda5" controls></audio>
+
+                                </div>
+
+                                <hr>
+
+                            </div>
+
+                            <div class="row">
+
+                                <div class="d-flex justify-content-around">
+
+                                    <p class="mb-0 align-self-center" id="PAyuda6"></p>
+                                    <audio src="" class="mb-2" id="AAyuda6" controls></audio>
+
+                                </div>
+
+                                <hr>
+                                
+                                <div class="d-flex justify-content-around">
+
+                                    <p class="mb-0 align-self-center" id="PAyuda7"></p>
+                                    <audio src="" class="mb-2" id="AAyuda7" controls></audio>
+
+                                </div>
+
+                                <hr>
+
+                                <div class="d-flex justify-content-around">
+
+                                    <p class="mb-0 align-self-center" id="PAyuda8"></p>
+                                    <audio src="" class="mb-2" id="AAyuda8" controls></audio>
+
+                                </div>
+
+                                <hr>
+
+                                <div class="d-flex justify-content-around">
+
+                                    <p class="mb-0 align-self-center" id="PAyuda9"></p>
+                                    <audio src="" class="mb-2" id="AAyuda9" controls></audio>
+
+                                </div>
+
+                                <hr>
+
+                                <div class="d-flex justify-content-around">
+
+                                    <p class="mb-0 align-self-center" id="PAyuda10"></p>
+                                    <audio src="" class="mb-2" id="AAyuda10" controls></audio>
+
+                                </div>
+
+                            </div>  
+
+                        </div>
+
+                    <?php
+
+                        }
+
+                    ?>
+
                 </div>
 
                 <div class="modal-footer">
@@ -232,9 +377,9 @@
                 ?>
 
                     <!-- Se crearán TextArea de manera dinámica -->
-                    <div id="respuestaNivelDificil" class="col ms-4 me-4 text-center"></div>
+                    <div id="respuestaNivelDificil" class="col ms-4 me-4 mb-2 text-center"></div>
 
-                    <button type="button" class="btn btn-dark" onclick="evaluarRespuesta(0)">Enviar</button>
+                    <button type="button" class="btn btn-outline-dark mt-2" onclick="evaluarRespuesta(0)">Validar</button>
 
                 <?php
 
@@ -251,7 +396,7 @@
 </body>
 <footer>
 
-    <div class="bg-light text-center p-1">
+    <div class="bg-dark fw-bold text-white text-center p-1">
 
         <span class="mb-0">AprendamosABC. <?php echo date('Y');  ?></span>
 
