@@ -91,7 +91,7 @@
             <div class="modal-content">
 
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Ayudas</h1>
+                    <img src="./css/iconos/info-circle.svg" alt="ayuda" width="30px" height="30px">
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
@@ -243,7 +243,7 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">OK</button>
                 </div>
 
             </div>
@@ -252,7 +252,7 @@
 
     </div>
 
-    <div class="container text-center" style="height: 80vh;">
+    <div class="container text-center" style="height: 80vh; padding-top: 100px;">
 
         <div class="row align-items-center" style="height: 10%;">
 
@@ -379,7 +379,7 @@
                     <!-- Se crearán TextArea de manera dinámica -->
                     <div id="respuestaNivelDificil" class="col ms-4 me-4 mb-2 text-center"></div>
 
-                    <button type="button" class="btn btn-outline-dark mt-2" onclick="evaluarRespuesta(0)">Validar</button>
+                    <button type="button" class="btn btn-outline-dark mt-2" onclick="evaluarRespuesta(0)">OK</button>
 
                 <?php
 

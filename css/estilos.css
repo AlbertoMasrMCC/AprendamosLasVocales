@@ -64,6 +64,14 @@ footer
 
 }
 
+.navbar
+{
+
+    position: fixed;
+    width: 100%;
+
+}
+
 h2 {margin-left: 55px;}
 
 textarea {

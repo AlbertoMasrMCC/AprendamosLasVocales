@@ -13,6 +13,8 @@ var preguntaCorrecta    = ""
 var respuestaCorrecta   = ""
 var ayudaCorrecta       = ""
 
+var relojActual
+
 function reloj()
 {
 
@@ -38,7 +40,7 @@ function reloj()
 
     }
 
-    setTimeout("reloj()", 1000)
+    relojActual = setTimeout("reloj()", 1000)
 
 }
 
@@ -58,7 +60,6 @@ function ayudas()
         if(indiceAyudasMostradas.length == respuestasActuales.length - 1)
         {
 
-            document.getElementById("ayuda1").innerText = "Ya se mostraron todas las ayudas posibles."
             return
 
         }
@@ -102,6 +103,8 @@ function reiniciarContadores()
     minutosTranscurridos    = 0
     segundosTranscurridos   = 0
     document.getElementById("tiempo").innerText = "00:00"
+
+    reloj()
     
     ayudasTotales           = 0
     document.getElementById("ayuda").innerText = ayudasTotales
@@ -164,52 +167,155 @@ function evaluarRespuesta(evento)
 
         errores()
 
-        Swal.fire(
-            '¡ERROR!',
-            'Respuesta incorrecta, vuelve a intentarlo.',
-            'error'
-        )
-        return
+        Swal.fire({
+            icon: 'error',
+            confirmButtonText: "OK"
+        })
 
-    }    
-    
-    var complejidadNueva = aplicarLogicaDifusa()
-
-    if(complejidadNueva == complejidad)
-    {
-
-        if(!restanPreguntas())
-        {
-
-            window.location.href = "terminado.html"
-            return
-
-        }
-
-        preguntaRespuestaAyudaCorrecta()
-
-        reiniciarContadores()
-
-        mostrarPregunta()
-        mostrarRespuesta()
-        mostrarAyuda()
-        
         return
 
     }
+    
+    var valorCrips = aplicarLogicaDifusa()
 
-    window.location.href = `actividades.php?complejidad=${complejidadNueva}`
+    clearTimeout(relojActual)
+
+    window.open(`mostrarGraficas.php?valorCrisp=${valorCrips}&ayudas=${ayudasTotales}&errores=${erroresTotales}&tiempo=${minutosTranscurridos}`, "_blank")
+
+    Swal.fire({
+        icon: 'success',
+        confirmButtonText: "OK"
+    }).then(resultado => {
+
+        if(resultado.value){
+
+            var complejidadNueva = obtenerDificultad(valorCrips)
+            
+            if(complejidadNueva == complejidad)
+            {
+
+                if(!restanPreguntas())
+                {
+
+                    window.location.href = "terminado.html"
+                    return
+
+                }
+
+                preguntaRespuestaAyudaCorrecta()
+
+                reiniciarContadores()
+
+                mostrarPregunta()
+                mostrarRespuesta()
+                mostrarAyuda()
+                
+                return
+
+            }
+
+            window.location.href = `actividades.php?complejidad=${complejidadNueva}`
+
+        }
+
+    })
+
+}
+
+function obtenerDificultad(valorCrips)
+{
+
+    if(valorCrips >= 0 && valorCrips <= 45)
+    {
+
+        return 1
+
+    }
+
+    if(valorCrips >= 46 && valorCrips <= 85)
+    {
+
+        return 2
+
+    }
+
+    if(valorCrips >= 86 && valorCrips <= 100)
+    {
+
+        return 3
+
+    }
+
+    return 0
 
 }
 
 function aplicarLogicaDifusa()
 {
 
+    if(erroresTotales > 5)
+        erroresTotales = 5
+
+    if(ayudasTotales > 5)
+        ayudasTotales = 5
+
+    if(minutosTranscurridos > 5)
+        minutosTranscurridos = 5
+
     console.log(`Tuvo ${ayudasTotales} ayudas`)
     console.log(`Tuvo ${erroresTotales} errores`)
     console.log(`Transcurrieron ${minutosTranscurridos} minutos`)
 
-    return 3
+    var obj = {
+		crisp_input: [erroresTotales, ayudasTotales, minutosTranscurridos],
+		variables_input: [
+			{
+				name: "Errores",
+				setsName: ["Pocos", "Normales", "Muchos"],
+				sets: [
+					[0,0,0,1.5],
+					[1,2,2,3],
+					[2,5,5,5]
+				]
+			},
+			{
+				name: "Ayuda",
+				setsName: ["Pocas", "Normales", "Muchas"],
+				sets: [
+					[0,0,0,1],
+					[1,2,2,3],
+					[2,5,5,5]
+				]
+			},
+			{
+				name: "Tiempo",
+				setsName: ["Poco", "Moderado", "Excedido"],
+				sets: [
+					[0,0,0,1],
+					[1,2,2,3],
+					[2,5,5,5]
+				]
+			}
+		],
+		variable_output: {
+			name: "Complejidad",
+			setsName: ["Facil", "Media", "Dificil"],
+			sets: [
+				[0,0,0,45],
+				[45,65,65,85],
+				[85,100,100,100]
+			]
+		},
+		inferences: [
+			[2,1,0],
+			[2,1,0],
+			[2,1,0]
+		]
+	};
+
+    var fl = new FuzzyLogic();
+
+    return fl.getResult(obj)
 
 }
 
