@@ -2,9 +2,8 @@ body
 {
 
     position: relative;
-    min-height: 100vh;
-    padding-bottom: 250px;
-    background-image: url("../multimedia/imagenes/aula.png");
+    min-height: 95vh;
+    background-image: url("../multimedia/imagenes/pizarron.png");
     background-size: 100% 100%;
 
 }
@@ -29,7 +28,7 @@ footer
 .imagenesVocales
 {
 
-    width: 300px;
+    width: 150px;
     height: auto;
 
 }
@@ -44,7 +43,7 @@ footer
 #iAyuda:hover
 {
 
-    content: url(./iconos/question-circle-fill.svg);
+    content: url(../multimedia/imagenes/foco.png);
 
 }
 
@@ -52,15 +51,26 @@ footer
 {
 
     width: 330px;
-    opacity: 95%;
+    background-color: transparent;
+    border-color: transparent !important;
 
 }
 
 .tarjetaRespuesta
 {
 
-    width: 200px;
-    opacity: 95%;
+    width: 180px;
+    background-color: transparent;
+    border-color: transparent !important;
+
+}
+
+.tarjetaRespuesta:hover
+{
+
+    width: 180px;
+    background-color: transparent;
+    border-color: white !important;
 
 }
 
@@ -72,9 +82,16 @@ footer
 
 }
 
-h2 {margin-left: 55px;}
+h2 
+{
+    
+    margin-left: 55px;
 
-textarea {
+}
+
+textarea 
+{
+
   margin-top: 10px;
   margin-left: 25px;
   -moz-border-bottom-colors: none;
@@ -88,17 +105,21 @@ textarea {
   border-style: none solid solid none;
   border-width: medium 1px 1px medium;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12) inset;
-  color: #555555;
+  color: black;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 1em;
   line-height: 1.4em;
   padding: 5px 8px;
   transition: background-color 0.2s ease 0s;
   text-align: center;
+
 }
 
 
-textarea:focus {
+textarea:focus 
+{
+
     background: none repeat scroll 0 0 #FFFFFF;
     outline-width: 0;
+    
 }

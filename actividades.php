@@ -51,7 +51,7 @@
                 <div class="d-flex align-items-center">
 
                     <a href="" data-bs-toggle="modal" data-bs-target="#ayudasModal" onclick="ayudas()">
-                        <img src="./css/iconos/question-circle.svg" id="iAyuda" alt="iAyuda" width="25px" height="25">
+                        <img src="./multimedia/imagenes/foco-apagado.png" id="iAyuda" alt="iAyuda" width="75px" height="75">
                     </a>
                     <p id="ayuda" class="ms-2 pt-3">0</p>
                 
@@ -59,14 +59,14 @@
 
                 <div class="d-flex align-items-center">
 
-                    <img src="./css/iconos/bug.svg" id="iError" alt="iError" width="25px" height="25">
+                    <img src="./multimedia/imagenes/errores.png" id="iError" alt="iError" width="75px" height="75">
                     <p id="error" class="ms-2 pt-3">0</p>
                 
                 </div>
 
                 <div class="d-flex align-items-center">
 
-                    <img src="./css/iconos/clock.svg" id="iTiempo" alt="iTiempo" width="25px" height="25">
+                    <img src="./multimedia/imagenes/tiempo.png" id="iTiempo" alt="iTiempo" width="65px" height="65">
                     <p id="tiempo" class="ms-2 pt-3">00:00</p>
                 
                 </div>
@@ -287,7 +287,7 @@
 
         </div>
 
-        <div class="row align-items-center" style="height: 80%;">
+        <div class="row align-items-center" style="height: 60%;">
 
             <div class="col ms-4 me-4 text-center">
 
@@ -298,7 +298,7 @@
 
                 ?>
 
-                    <img id="pregunta2" alt="" width="300px" height="300px">
+                    <img id="pregunta2" alt="" width="250px" height="auto">
 
                 <?php
 
@@ -334,32 +334,32 @@
 
                     <div class="row justify-content-center">
 
-                        <div class="card border-dark ms-3 mt-3 shadow col-2 tarjetaRespuesta">
+                        <div class="card border-dark ms-3 mt-3 col-2 tarjetaRespuesta">
 
                             
                             <a href="#"><img id="respuesta1" class="card-img-top ms-2 me-2" onclick="evaluarRespuesta(1)"></a>
 
                         </div>
 
-                        <div class="card border-dark ms-3 mt-3 shadow col-2 tarjetaRespuesta">
+                        <div class="card border-dark ms-3 mt-3 col-2 tarjetaRespuesta">
 
                             <a href="#"><img id="respuesta2" class="card-img-top ms-2 me-2" onclick="evaluarRespuesta(2)"></a>
 
                         </div>
 
-                        <div class="card border-dark ms-3 mt-3 shadow col-2 tarjetaRespuesta">
+                        <div class="card border-dark ms-3 mt-3 col-2 tarjetaRespuesta">
 
                             <a href="#"><img id="respuesta3" class="card-img-top ms-2 me-2" onclick="evaluarRespuesta(3)"></a>
                             
                         </div>
 
-                        <div class="card border-dark ms-3 mt-3 shadow col-2 tarjetaRespuesta">
+                        <div class="card border-dark ms-3 mt-3 col-2 tarjetaRespuesta">
 
                             <a href="#"><img id="respuesta4" class="card-img-top ms-2 me-2" onclick="evaluarRespuesta(4)"></a>
 
                         </div>
 
-                        <div class="card border-dark ms-3 mt-3 shadow col-2 tarjetaRespuesta">
+                        <div class="card border-dark ms-3 mt-3 col-2 tarjetaRespuesta">
 
                             <a href="#"><img id="respuesta5" class="card-img-top ms-2 me-2" onclick="evaluarRespuesta(5)"></a>
 
@@ -403,6 +403,8 @@
     </div>
 
 </footer>
+
 <!-- Propio -->
 <script src="./js/eventos.js"></script>
+
 </html>

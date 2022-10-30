@@ -20,19 +20,27 @@
 </head>
 <body>
 
-    <p class="h1 text-center mt-3">¡JUGUEMOS A APRENDER!</p>
+    <div class="mt-2 mb-2 text-center">
+
+        <audio src="./multimedia/audios/instrucciones.ogg" controls autoplay></audio>
+
+    </div>
 
     <div class="row justify-content-center" style="width: 99%">
 
         <div class="col-11">
 
-            <div class="row justify-content-center">
+            <div class="row justify-content-center mb-2 mt-2">
 
                 <div class="card border-dark ms-3 mt-3 shadow col-2 tarjeta">
 
-                    <img src="./multimedia/imagenes/Aa.png" class="card-img-top imagenesVocales ms-2 me-2" alt="Vocal A">
+                    <div class="text-center mt-2">
 
-                    <div class="card-body ps-0">
+                        <img src="./multimedia/imagenes/Aa.png" class="card-img-top imagenesVocales ms-2 me-2" alt="Vocal A">
+
+                    </div>
+
+                    <div class="mt-2 mb-2">
 
                         <audio src="./multimedia/audios/Aa.ogg" controls></audio>
 
@@ -42,9 +50,13 @@
 
                 <div class="card border-dark ms-3 mt-3 shadow col-2 tarjeta">
 
-                    <img src="./multimedia/imagenes/Ee.png" class="card-img-top imagenesVocales ms-2 me-2" alt="Vocal E">
+                    <div class="text-center mt-2">
 
-                    <div class="card-body ps-0">
+                        <img src="./multimedia/imagenes/Ee.png" class="card-img-top imagenesVocales ms-2 me-2" alt="Vocal E">
+
+                    </div>
+
+                    <div class="mt-2 mb-2">
 
                         <audio src="./multimedia/audios/Ee.ogg" controls></audio>
 
@@ -54,9 +66,13 @@
 
                 <div class="card border-dark ms-3 mt-3 shadow col-2 tarjeta">
 
-                    <img src="./multimedia/imagenes/Ii.png" class="card-img-top imagenesVocales ms-2 me-2" alt="Vocal I">
+                    <div class="text-center mt-2">
+
+                        <img src="./multimedia/imagenes/Ii.png" class="card-img-top imagenesVocales ms-2 me-2" alt="Vocal I">
                     
-                    <div class="card-body ps-0">
+                    </div>
+
+                    <div class="mt-2 mb-2">
 
                         <audio src="./multimedia/audios/Ii.ogg" controls></audio>
 
@@ -66,13 +82,17 @@
 
             </div>
 
-            <div class="row justify-content-center">
+            <div class="row justify-content-center mt-2">
 
                 <div class="card border-dark ms-3 mt-3 shadow col-2 tarjeta">
 
-                    <img src="./multimedia/imagenes/Oo.png" class="card-img-top imagenesVocales ms-2 me-2" alt="Vocal O">
+                    <div class="text-center mt-2">
 
-                    <div class="card-body ps-0">
+                        <img src="./multimedia/imagenes/Oo.png" class="card-img-top imagenesVocales ms-2 me-2" alt="Vocal O">
+
+                    </div>
+
+                    <div class="mt-2 mb-2">
 
                         <audio src="./multimedia/audios/Oo.ogg" controls></audio>
 
@@ -82,9 +102,13 @@
 
                 <div class="card border-dark ms-3 mt-3 shadow col-2 tarjeta">
 
-                    <img src="./multimedia/imagenes/Uu.png" class="card-img-top imagenesVocales ms-2 me-2" alt="Vocal U">
+                    <div class="text-center mt-2">
 
-                    <div class="card-body ps-0">
+                        <img src="./multimedia/imagenes/Uu.png" class="card-img-top imagenesVocales ms-2 me-2" alt="Vocal U">
+
+                    </div>
+
+                    <div class="mt-2 mb-2">
 
                         <audio src="./multimedia/audios/Uu.ogg" controls></audio>
 

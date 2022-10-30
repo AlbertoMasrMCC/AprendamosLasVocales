@@ -393,7 +393,7 @@ function mostrarRespuesta()
                 textArea.minLength = "1"
                 textArea.style = "resize: none;"
             
-                if(respuestaCorrecta[i] ==  "A" || respuestaCorrecta[i] ==  "E" || respuestaCorrecta[i] ==  "I" || respuestaCorrecta[i] ==  "O" || respuestaCorrecta[i] ==  "U")
+                if(respuestaCorrecta[i] ==  "a" || respuestaCorrecta[i] ==  "e" || respuestaCorrecta[i] ==  "i" || respuestaCorrecta[i] ==  "o" || respuestaCorrecta[i] ==  "u")
                 {
 
                     textArea.textContent = ""
@@ -421,7 +421,7 @@ function mostrarAyuda()
     if(complejidad == 1)
     {
 
-        document.getElementById("ayuda1").src = `./multimedia/audios/${preguntaCorrecta}`
+        document.getElementById("ayuda1").src = `./multimedia/audios/${ayudaCorrecta}`
 
     }
     else
@@ -436,7 +436,7 @@ function mostrarAyuda()
                 var partesRespuestaCorrecta = seccionRespuestaCorrecta[i].split(",")
 
                 document.getElementById(`PAyuda${(i + 1)}`).innerText = partesRespuestaCorrecta[0]
-                document.getElementById(`AAyuda${(i + 1)}`).src       = partesRespuestaCorrecta[1]
+                document.getElementById(`AAyuda${(i + 1)}`).src       = `./multimedia/audios/${partesRespuestaCorrecta[1]}`
 
             }
 

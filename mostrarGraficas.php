@@ -24,7 +24,7 @@
 <script src="./js/logicaDifusa/fuzzy.min.js"></script>
 <script>
 	var obj = {
-		crisp_input: [<?php echo $_GET['ayudas'] ?>, <?php echo $_GET['errores'] ?>, <?php echo $_GET['tiempo'] ?>],
+		crisp_input: [<?php echo $_GET['errores'] ?>, <?php echo $_GET['ayudas'] ?>, <?php echo $_GET['tiempo'] ?>],
 		variables_input: [
 			{
 				name: "Errores",

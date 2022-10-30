@@ -18,27 +18,27 @@ function cambiarTextoFondo(segundo){
 
         case 1:
             mensaje = segundo
-            color   = 'green'
+            color   = '#ff6961'
         break
 
         case 2:
             mensaje = segundo
-            color   = 'red'
+            color   = '#77dd77'
         break
 
         case 3:
             mensaje = segundo
-            color   = 'blue'
+            color   = '#fdfd96'
         break
 
         case 4:
-            mensaje = '¿Listo?'
-            color   = 'purple'
+            mensaje = 'Comenzará en...'
+            color   = '#84b6f4'
         break
 
         default:
-            mensaje = '¡YA!'
-            color   = 'gray'
+            mensaje = ''
+            color   = '#fdcae1'
         break
 
     }
