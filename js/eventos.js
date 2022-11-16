@@ -180,7 +180,7 @@ function evaluarRespuesta(evento)
 
     clearTimeout(relojActual)
 
-    window.open(`mostrarGraficas.php?valorCrisp=${valorCrips}&ayudas=${ayudasTotales}&errores=${erroresTotales}&tiempo=${minutosTranscurridos}`, "_blank")
+    //window.open(`mostrarGraficas.php?valorCrisp=${valorCrips}&ayudas=${ayudasTotales}&errores=${erroresTotales}&tiempo=${minutosTranscurridos}`, "_blank")
 
     Swal.fire({
         icon: 'success',
@@ -261,10 +261,6 @@ function aplicarLogicaDifusa()
 
     if(minutosTranscurridos > 5)
         minutosTranscurridos = 5
-
-    console.log(`Tuvo ${ayudasTotales} ayudas`)
-    console.log(`Tuvo ${erroresTotales} errores`)
-    console.log(`Transcurrieron ${minutosTranscurridos} minutos`)
 
     var obj = {
 		crisp_input: [erroresTotales, ayudasTotales, minutosTranscurridos],
