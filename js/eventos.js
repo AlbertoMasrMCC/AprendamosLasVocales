@@ -15,6 +15,12 @@ var ayudaCorrecta       = ""
 
 var relojActual
 
+let apertura        = document.getElementById("apertura")
+let responsabilidad = document.getElementById("responsabilidad")
+let sociabilidad    = document.getElementById("sociabilidad")
+let amabilidad      = document.getElementById("amabilidad")
+let neuroticismo    = document.getElementById("neuroticismo")
+
 function reloj()
 {
 
@@ -214,7 +220,7 @@ function evaluarRespuesta(evento)
 
             }
 
-            window.location.href = `actividades.php?complejidad=${complejidadNueva}`
+            window.location.href = `actividades.php?complejidad=${complejidadNueva}&apertura=${apertura.value}&responsabilidad=${responsabilidad.value}&sociabilidad=${sociabilidad.value}&amabilidad=${amabilidad.value}&neuroticismo=${neuroticismo.value}`
 
         }
 

@@ -83,6 +83,13 @@
     <!-- ALMACENAMOS LA COMPLEJIDAD -->
     <input type="hidden" id="complejidad" value="<?php echo $complejidad ?>">
 
+    <!-- ALMACENAMOS LAS PERSONALIDADES -->
+    <input type="hidden" id="apertura" value="<?php echo $_GET['apertura'] ?>">
+    <input type="hidden" id="responsabilidad" value="<?php echo $_GET['responsabilidad'] ?>">
+    <input type="hidden" id="sociabilidad" value="<?php echo $_GET['sociabilidad'] ?>">
+    <input type="hidden" id="amabilidad" value="<?php echo $_GET['amabilidad'] ?>">
+    <input type="hidden" id="neuroticismo" value="<?php echo $_GET['neuroticismo'] ?>">
+
     <!-- Modal -->
     <div class="modal fade" id="ayudasModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 

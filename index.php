@@ -122,7 +122,7 @@
 
         <div class="col-1 align-self-center">
             
-            <a href="splash_screen.html"><img src="./css/iconos/arrow-right-circle.svg" id="iJugar" alt="iJugar" width="50px" height="50px"></a>
+            <a href="preguntar.php"><img src="./css/iconos/arrow-right-circle.svg" id="iJugar" alt="iJugar" width="50px" height="50px"></a>
 
         </div>
 

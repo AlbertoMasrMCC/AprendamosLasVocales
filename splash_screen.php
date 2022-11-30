@@ -17,6 +17,12 @@
 </head>
 <body>
 
+    <input type="hidden" id="apertura" class="d-none" value="<?php echo $_GET['apertura'] ?>">
+    <input type="hidden" id="responsabilidad" class="d-none" value="<?php echo $_GET['responsabilidad'] ?>">
+    <input type="hidden" id="sociabilidad" class="d-none" value="<?php echo $_GET['sociabilidad'] ?>">
+    <input type="hidden" id="amabilidad" class="d-none" value="<?php echo $_GET['amabilidad'] ?>">
+    <input type="hidden" id="neuroticismo" class="d-none" value="<?php echo $_GET['neuroticismo'] ?>">
+
     <div class="position-absolute top-50 start-50 translate-middle">
 
         <h1 id="contador" class="display-1 fw-bold text-dark"></h1>

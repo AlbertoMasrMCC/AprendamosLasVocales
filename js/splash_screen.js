@@ -1,10 +1,15 @@
-let contador    = document.getElementById("contador")
-let cuerpo      = document.body
+let contador        = document.getElementById("contador")
+let cuerpo          = document.body
+let apertura        = document.getElementById("apertura")
+let responsabilidad = document.getElementById("responsabilidad")
+let sociabilidad    = document.getElementById("sociabilidad")
+let amabilidad      = document.getElementById("amabilidad")
+let neuroticismo    = document.getElementById("neuroticismo")
 
 function redireccionarActividades()
 {
 
-    window.location.href = "actividades.php?complejidad=1"
+    window.location.href = `actividades.php?complejidad=1&apertura=${apertura.value}&responsabilidad=${responsabilidad.value}&sociabilidad=${sociabilidad.value}&amabilidad=${amabilidad.value}&neuroticismo=${neuroticismo.value}`
 
 }
 
