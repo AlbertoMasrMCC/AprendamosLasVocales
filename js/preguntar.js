@@ -45,8 +45,6 @@ recognition.onspeechstart = function() {
 
 function validarTextoObtenido() {
 
-  debugger
-
   textoObtenido = texto.value
   palabrasTexto = textoObtenido.split(" ")
 
@@ -139,7 +137,7 @@ function escribirArchivo() {
 
 function obtenerPersonalidad() {
 
-  var parametros = `opcion=obtenerpersonalidad`
+  var parametros = `opcion=obtenerpersonalidad&texto=${texto.value}`
 
   return ejecutarFunciones(parametros)
 
@@ -181,13 +179,18 @@ function ejecutarFunciones(parametros) {
 
       Swal.fire(
           '¡ERROR!',
-          'Hubo un error al procesar la petición, '+ textStatus.textStatus,
+          'Hubo un error al procesar la petición',
           'error'
         )
 
       btnReproducir.disabled = false
       cambiarColorFondo(ROJO)
       mostrarIconoReproducir(true)
+
+      var resultado = {}
+      resultado.estado = "0"
+
+      $resultadoDevolver = resultado
 
     },
     complete: function() {
