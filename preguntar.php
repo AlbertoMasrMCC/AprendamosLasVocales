@@ -28,16 +28,86 @@
 
     <div class="mt-2 mb-2 text-center">
 
-        <audio src="./multimedia/audios/pregunta.ogg" controls autoplay></audio>
+        <audio src="./multimedia/audios/instrucciones.ogg" controls autoplay></audio>
 
     </div>
 
     <input id="texto" type="button" value="" class="d-none" style="border: none;">
 
-    <div class="row justify-content-center aling-item-center" style="width: 99%; height: 90vh;">
+    <div class="row justify-content-center" style="width: 99%">
 
-        <button id="btnReproducir" class="btn btn-none" onclick="iniciarDetenerGrabacion()"><img src="./css/iconos/play.svg" id="iReproducir" alt="iReproducir" width="100px" height="100px"></button>
-        
+        <div class="row justify-content-around mb-2 mt-2">
+
+            <div id="divSpiderMan" class="card border-dark ms-3 mt-3 shadow col-2 tarjeta" onclick="reproducirInstrucciones()">
+
+                <div class="text-center mt-2">
+
+                    <img src="./multimedia/imagenes/spider-man.png" class="card-img-top imagenesPersonajes ms-2 me-2" alt="Hombre araña">
+
+                </div>
+
+            </div>
+
+            <div id="divSuperMan" class="card border-dark ms-3 mt-3 shadow col-2 tarjeta" onclick="reproducirInstrucciones()">
+
+                <div class="text-center mt-2">
+
+                    <img src="./multimedia/imagenes/superman.png" class="card-img-top imagenesPersonajes ms-2 me-2" alt="Superman">
+
+                </div>
+
+            </div>
+
+            <div id="divMujerMaravilla" class="card border-dark ms-3 mt-3 shadow col-2 tarjeta" onclick="reproducirInstrucciones()">
+
+                <div class="text-center mt-2">
+
+                    <img src="./multimedia/imagenes/mujerMaravilla.png" class="card-img-top imagenesPersonajes ms-2 me-2" alt="Batman">
+                
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row justify-content-around mt-2">
+
+            <div id="divCenicienta" class="card border-dark ms-3 mt-3 shadow col-2 tarjeta" onclick="reproducirInstrucciones()">
+
+                <div class="text-center mt-2">
+
+                    <img src="./multimedia/imagenes/cenicienta.png" class="card-img-top imagenesPersonajes ms-2 me-2" alt="Cenicienta">
+
+                </div>
+
+            </div>
+
+            <div id="divMulan" class="card border-dark ms-3 mt-3 shadow col-2 tarjeta" onclick="reproducirInstrucciones()">
+
+                <div class="text-center mt-2">
+
+                    <img src="./multimedia/imagenes/mulan.png" class="card-img-top imagenesPersonajes ms-2 me-2" alt="Mulan">
+
+                </div>
+
+            </div>
+
+            <div id="divAriel" class="card border-dark ms-3 mt-3 shadow col-2 tarjeta" onclick="reproducirInstrucciones()">
+
+                <div class="text-center mt-2">
+
+                    <img src="./multimedia/imagenes/ariel.png" class="card-img-top imagenesPersonajes ms-2 me-2" alt="Ariel">
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <audio id="preguntaPersonalidad" src="./multimedia/audios/PreguntaPersonalidad.ogg"></audio>
+        <audio id="preguntaPersonalidadNuevamente" src="./multimedia/audios/PreguntaPersonalidadNuevamente.ogg"></audio>
+        <audio id="preguntaPersonalidadOtra" src="./multimedia/audios/PreguntaPersonalidadOtra.ogg"></audio>
+
     </div>
 
 </body>

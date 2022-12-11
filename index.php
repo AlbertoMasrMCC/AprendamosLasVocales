@@ -22,7 +22,7 @@
 
     <div class="mt-2 mb-2 text-center">
 
-        <audio src="./multimedia/audios/instrucciones.ogg" controls autoplay></audio>
+        <audio id="audioBienvenida" src="./multimedia/audios/bienvenida.ogg" controls></audio>
 
     </div>
 
@@ -30,9 +30,9 @@
 
         <div class="col-11">
 
-            <div class="row justify-content-center mb-2 mt-2">
+            <div class="row justify-content-around mb-4 mt-2">
 
-                <div class="card border-dark ms-3 mt-3 shadow col-2 tarjeta">
+                <div id="divVocalA" class="card border-dark ms-3 mt-3 shadow col-2 tarjeta">
 
                     <div class="text-center mt-2">
 
@@ -40,15 +40,11 @@
 
                     </div>
 
-                    <div class="mt-2 mb-2">
-
-                        <audio src="./multimedia/audios/Aa.ogg" controls></audio>
-
-                    </div>
+                    <audio id="audioVocalA" src="./multimedia/audios/Aa.ogg"></audio>
 
                 </div>
 
-                <div class="card border-dark ms-3 mt-3 shadow col-2 tarjeta">
+                <div id="divVocalE" class="card border-dark ms-3 mt-3 shadow col-2 tarjeta">
 
                     <div class="text-center mt-2">
 
@@ -56,15 +52,11 @@
 
                     </div>
 
-                    <div class="mt-2 mb-2">
-
-                        <audio src="./multimedia/audios/Ee.ogg" controls></audio>
-
-                    </div>
+                    <audio id="audioVocalE" src="./multimedia/audios/Ee.ogg"></audio>
 
                 </div>
 
-                <div class="card border-dark ms-3 mt-3 shadow col-2 tarjeta">
+                <div id="divVocalI" class="card border-dark ms-3 mt-3 shadow col-2 tarjeta">
 
                     <div class="text-center mt-2">
 
@@ -72,19 +64,15 @@
                     
                     </div>
 
-                    <div class="mt-2 mb-2">
-
-                        <audio src="./multimedia/audios/Ii.ogg" controls></audio>
-
-                    </div>
+                    <audio id="audioVocalI" src="./multimedia/audios/Ii.ogg"></audio>
 
                 </div>
 
             </div>
 
-            <div class="row justify-content-center mt-2">
+            <div class="row justify-content-around mt-4">
 
-                <div class="card border-dark ms-3 mt-3 shadow col-2 tarjeta">
+                <div id="divVocalO" class="card border-dark ms-3 mt-3 shadow col-2 tarjeta">
 
                     <div class="text-center mt-2">
 
@@ -92,15 +80,11 @@
 
                     </div>
 
-                    <div class="mt-2 mb-2">
-
-                        <audio src="./multimedia/audios/Oo.ogg" controls></audio>
-
-                    </div>
+                    <audio id="audioVocalO" src="./multimedia/audios/Oo.ogg"></audio>
 
                 </div>
 
-                <div class="card border-dark ms-3 mt-3 shadow col-2 tarjeta">
+                <div id="divVocalU" class="card border-dark ms-3 mt-3 shadow col-2 tarjeta">
 
                     <div class="text-center mt-2">
 
@@ -108,11 +92,7 @@
 
                     </div>
 
-                    <div class="mt-2 mb-2">
-
-                        <audio src="./multimedia/audios/Uu.ogg" controls></audio>
-
-                    </div>
+                    <audio id="audioVocalU" src="./multimedia/audios/Uu.ogg"></audio>
 
                 </div>
 
@@ -138,4 +118,5 @@
     </div>
 
 </footer>
+<script src="./js/index.js"></script>
 </html>

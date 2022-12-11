@@ -28,8 +28,16 @@ footer
 .imagenesVocales
 {
 
-    width: 150px;
+    width: 200px;
     height: auto;
+
+}
+
+.imagenesPersonajes
+{
+
+    height: 250px;
+    width: 250px;
 
 }
 
@@ -53,6 +61,14 @@ footer
     width: 330px;
     background-color: transparent;
     border-color: transparent !important;
+
+}
+
+.tarjeta:hover
+{
+
+    background-color: gray;
+    cursor: pointer;
 
 }
 

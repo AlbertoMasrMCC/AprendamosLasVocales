@@ -1,54 +1,68 @@
-var grabar                  = false
-var final_transcript        = ""
+var grabar                        = false
+var final_transcript              = ""
 
-let cuerpo                  = document.body
-let btnReproducir           = document.getElementById("btnReproducir")
-let texto                   = document.getElementById("texto")
-let iconoReproducir         = document.getElementById("iReproducir")
-let TIEMPO_PREGUNTA         = 30
-let LIMITE_PALABRAS_MINIMAS = 15
-let ROJO                    = "#FF0000"
-let AMARILLO                = "#FFFF00"
-let VERDE                   = "#008000"
+let cuerpo                        = document.body
+let texto                         = document.getElementById("texto")
+
+let divSpiderMan                  = document.getElementById("divSpiderMan")
+let divSuperMan                   = document.getElementById("divSuperMan")
+let divMujerMaravilla             = document.getElementById("divMujerMaravilla")
+let divCenicienta                 = document.getElementById("divCenicienta")
+let divMulan                      = document.getElementById("divMulan")
+let divAriel                      = document.getElementById("divAriel")
+
+let preguntaPersonalidad            = document.getElementById("preguntaPersonalidad")
+let preguntaPersonalidadNuevamente  = document.getElementById("preguntaPersonalidadNuevamente")
+let preguntaPersonalidadOtra        = document.getElementById("preguntaPersonalidadOtra")
+
+let TIEMPO_PREGUNTA               = 30
+let LIMITE_PALABRAS_MINIMAS       = 15
+let ROJO                          = "#FF0000"
+let AMARILLO                      = "#FFFF00"
+let VERDE                         = "#008000"
 
 try {
 
-  var SpeechRecognition       = window.webkitSpeechRecognition;
-  var recognition             = new SpeechRecognition();
-  recognition.continuous      = true;
-  recognition.interimResults  = true;
-  recognition.lang            = 'es-MX'
+  var SpeechRecognition           = window.webkitSpeechRecognition;
+  var recognition                 = new SpeechRecognition();
+  recognition.continuous          = true;
+  recognition.interimResults      = true;
+  recognition.lang                = 'es-MX'
 
 }
 catch(e) {
 
-  Swal.fire(
-      '¡ERROR!',
-      'Hubo un error al procesar la petición, '+ e,
-      'error'
-    )
+  debugger
 
-  btnReproducir.disabled = false
   cambiarColorFondo(ROJO)
-  mostrarIconoReproducir(true)
+  habilidarImagenes(true)
+
+  Swal.fire(
+    '¡ERROR!',
+    'Hubo un error '+ e,
+    'error'
+  )
 
 }
 
-recognition.onspeechstart = function() { 
+async function reproducirInstrucciones() {
 
-  cambiarColorFondo(AMARILLO)
-  cuerpo.style.backgroundImage = "none";
-  mostrarIconoReproducir(false)
-  cuentaRegresiva(TIEMPO_PREGUNTA)
+  preguntaPersonalidad.play()
+
+  await sleep(5000)
+
+  iniciarDetenerGrabacion()
 
 }
 
 function validarTextoObtenido() {
 
+  debugger
+
   textoObtenido = texto.value
   palabrasTexto = textoObtenido.split(" ")
 
-  if(texto == "")
+  if(textoObtenido == "")
     return false
   
   if(palabrasTexto.length <= LIMITE_PALABRAS_MINIMAS)
@@ -62,16 +76,20 @@ recognition.onspeechend = function() {
 
   final_transcript  = ""
 
-  if(!validarTextoObtenido())
-  {
+  if(!validarTextoObtenido()) {
+
+    debugger
+
+    cambiarColorFondo(ROJO)
+    habilidarImagenes(true) 
 
     Swal.fire({
-      icon: 'error',
+      icon: "error",
+      // reproduce el audio cuando se muestra el Swal
+      didOpen: () => {
+        preguntaPersonalidadNuevamente.play();
+      }
     })
-
-    btnReproducir.disabled = false
-    cambiarColorFondo(ROJO)
-    mostrarIconoReproducir(true)  
 
     return
 
@@ -101,18 +119,6 @@ recognition.onspeechend = function() {
     }) 
 
   })
-
-}
- 
-recognition.onerror = function(event) {
-
-  if(event.error == 'no-speech') {
-
-    btnReproducir.disabled = false
-    cambiarColorFondo(ROJO)
-    mostrarIconoReproducir(true)
-
-  };
 
 }
 
@@ -158,17 +164,18 @@ function ejecutarFunciones(parametros) {
     data: parametros,
     success: function(resultado) {
 
-      if(resultado.estado == "0"){
+      if(resultado.estado == "0") {
+
+        debugger
+
+        cambiarColorFondo(ROJO)
+        habilidarImagenes(true)
 
         Swal.fire(
           '¡ERROR!',
-          resultado.mensaje,
+          'Hubo un error al procesar la petición, '+ resultado.mensaje,
           'error'
         )
-
-        btnReproducir.disabled = false
-        cambiarColorFondo(ROJO)
-        mostrarIconoReproducir(true)
 
       }
 
@@ -177,15 +184,16 @@ function ejecutarFunciones(parametros) {
     },
     error: function(textStatus) {
 
-      Swal.fire(
-          '¡ERROR!',
-          'Hubo un error al procesar la petición',
-          'error'
-        )
+      debugger
 
-      btnReproducir.disabled = false
       cambiarColorFondo(ROJO)
-      mostrarIconoReproducir(true)
+      habilidarImagenes(true)
+
+      Swal.fire(
+        '¡ERROR!',
+        'Hubo un error al procesar la petición, '+ textStatus.textStatus,
+        'error'
+      )
 
       var resultado = {}
       resultado.estado = "0"
@@ -213,18 +221,37 @@ function sleep(ms) {
 
 async function cuentaRegresiva(segundosRestantes) {
 
-  await sleep(1000);
+  var temporizador = segundosRestantes * 1000
 
-  segundosRestantes = segundosRestantes - 1;
-
-  if(segundosRestantes == 0) {
-
+  let timerInterval
+  
+  Swal.fire({
+    html: '<b></b>',
+    timer: temporizador,
+    timerProgressBar: true,
+    didOpen: () => {
+      Swal.showLoading()
+      const b = Swal.getHtmlContainer().querySelector('b')
+      timerInterval = setInterval(() => {
+        const timeLeft = Math.round(Swal.getTimerLeft() / 1000);
+        b.textContent = timeLeft
+      }, 1000)
+    },
+    willClose: () => {
+      clearInterval(timerInterval)
+    }
+  }).then((result) => {
+    /* Read more about handling dismissals below */
+    if (result.dismiss === Swal.DismissReason.timer) {
       recognition.stop()
-      return
-
-  }
-
-  cuentaRegresiva(segundosRestantes)
+    }
+    else {
+      cambiarColorFondo(ROJO)
+      habilidarImagenes(true) 
+      preguntaPersonalidadOtra.play();
+      recognition.stop()
+    }
+  })
 
 }
 
@@ -234,19 +261,54 @@ function cambiarColorFondo(color) {
 
 }
 
-function mostrarIconoReproducir(reproducir) {
+function habilidarImagenes(habilitar) {
 
-  if(reproducir)
-      iconoReproducir.src = "./css/iconos/play.svg"
-  else
-      iconoReproducir.src = "./css/iconos/stop.svg"
+  if(!habilitar) {
+
+    divSpiderMan.style.pointerEvents = "none";
+
+    divSuperMan.style.pointerEvents = "none";
+
+    divMujerMaravilla.style.pointerEvents = "none";
+
+    divCenicienta.style.pointerEvents = "none";
+
+    divMulan.style.pointerEvents = "none";
+
+    divAriel.style.pointerEvents = "none";
+
+  }
+  else {
+
+    divSpiderMan.style.pointerEvents = "auto";
+
+    divSuperMan.style.pointerEvents = "auto";
+
+    divMujerMaravilla.style.pointerEvents = "auto";
+
+    divCenicienta.style.pointerEvents = "auto";
+
+    divMulan.style.pointerEvents = "auto";
+
+    divAriel.style.pointerEvents = "auto";
+
+  }
 
 }
 
 function iniciarDetenerGrabacion() {
 
+  cambiarColorFondo(AMARILLO)
+  cuerpo.style.backgroundImage = "none";
+  habilidarImagenes(false)
+  cuentaRegresiva(TIEMPO_PREGUNTA)
+
   grabar = !grabar
   recognition.start()
-  btnReproducir.disabled = true
+  
+  if(grabar)
+    habilidarImagenes(false)
+  else
+    habilidarImagenes(true)
 
 }

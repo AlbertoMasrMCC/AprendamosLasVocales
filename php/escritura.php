@@ -1,24 +1,19 @@
 <?php
 
-    define("RUTA_ARCHIVO", "D:\\alber\\Desktop\\Escuela\\Tecnológico de Culiacán\\Maestría en ciencias computacionales\\1er semestre\\Introducción a la inteligencia artificial\\Redes neuronales\\");
-    define("NOMBRE_ARCHIVO", "pruebaTexto.txt");
+    define("RUTA_ARCHIVO", "C:\\xampp\\htdocs\\AprendamosLasVocales\\AudioTexto\\");
+    define("NOMBRE_ARCHIVO", "respuesta.txt");
 
     $opcion = $_POST['opcion'];
     $texto  = $_POST['texto'];        
 
-    switch($opcion)
-    {
+    switch($opcion) {
 
         case "escribirarchivo":
-
             escribirArchivo($texto);
-
         break;
 
         case "obtenerpersonalidad":
-
             obtenerPersonalidad($texto);
-
         break;
 
     }
@@ -29,16 +24,14 @@
         $mensaje = "Archivo creado correctamente";
 
         if(file_exists(RUTA_ARCHIVO. NOMBRE_ARCHIVO))
-            if(!unlink(RUTA_ARCHIVO. NOMBRE_ARCHIVO))
-            {
+            if(!unlink(RUTA_ARCHIVO. NOMBRE_ARCHIVO)) {
     
                 $estado  = "0";
                 $mensaje = "Error al intentar eliminar archivo";
     
             }
 
-        if(!file_put_contents(RUTA_ARCHIVO. NOMBRE_ARCHIVO, $texto))
-        {
+        if(!file_put_contents(RUTA_ARCHIVO. NOMBRE_ARCHIVO, $texto)) {
 
             $estado  = "0";
             $mensaje = "No se puede crear archivo";
@@ -49,8 +42,7 @@
 
     }
 
-    function consumirAPIPersonText($endPoint, $texto)
-    {
+    function consumirAPIPersonText($endPoint, $texto) {
 
         $textoCodificado = urlencode($texto);
 
@@ -69,8 +61,7 @@
         $presenta_personalidad  = json_decode(curl_exec($curl), true);
         $estado                 = curl_getinfo($curl, CURLINFO_HTTP_CODE);
 
-        if(is_null($presenta_personalidad))
-        {
+        if(is_null($presenta_personalidad)) {
 
             $personalidad   = "SIN PERSONALIDAD";
             $estado         = "404"; 
@@ -83,8 +74,7 @@
 
     }
 
-    function obtenerPersonalidad($texto)
-    {
+    function obtenerPersonalidad($texto) {
 
         $estado     = "0";
         $mensaje    = "Error al intentar obtener la personalidad";
@@ -92,8 +82,7 @@
         // APERTURA;
         $apertura = consumirAPIPersonText("apertura", $texto);
 
-        if($apertura['estado'] == "400" || $apertura['estado'] == "404")
-        {
+        if($apertura['estado'] == "400" || $apertura['estado'] == "404") {
 
             $respuesta = array("estado" => $estado, "mensaje" => $mensaje);
 
@@ -106,8 +95,7 @@
         // RESPONSABILIDAD
         $responsabilidad = consumirAPIPersonText("responsabilidad", $texto);
 
-        if($responsabilidad['estado'] == "400" || $responsabilidad['estado'] == "404")
-        {
+        if($responsabilidad['estado'] == "400" || $responsabilidad['estado'] == "404") {
 
             $respuesta = array("estado" => $estado, "mensaje" => $mensaje);
 
@@ -120,8 +108,7 @@
         // SOCIABILIDAD
         $sociabilidad = consumirAPIPersonText("sociabilidad", $texto);
 
-        if($sociabilidad['estado'] == "400" || $sociabilidad['estado'] == "404")
-        {
+        if($sociabilidad['estado'] == "400" || $sociabilidad['estado'] == "404") {
 
             $respuesta = array("estado" => $estado, "mensaje" => $mensaje);
 
@@ -134,8 +121,7 @@
         // AMABILIDAD
         $amabilidad = consumirAPIPersonText("amabilidad", $texto);
 
-        if($amabilidad['estado'] == "400" || $amabilidad['estado'] == "404")
-        {
+        if($amabilidad['estado'] == "400" || $amabilidad['estado'] == "404") {
 
             $respuesta = array("estado" => $estado, "mensaje" => $mensaje);
 
@@ -148,8 +134,7 @@
         // NEUROTICISMO
         $neuroticismo = consumirAPIPersonText("neuroticismo", $texto);
 
-        if($neuroticismo['estado'] == "400" || $neuroticismo['estado'] == "404")
-        {
+        if($neuroticismo['estado'] == "400" || $neuroticismo['estado'] == "404") {
 
             $respuesta = array("estado" => $estado, "mensaje" => $mensaje);
 

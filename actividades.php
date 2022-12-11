@@ -129,6 +129,8 @@
                     <div class="text-center">
 
                         <p id="ayuda1">Se deshabilitó una de las imagenes</p>
+                        <audio id="audioAyuda1" src="./multimedia/audios/ayuda1.ogg"></audio>
+                        <audio id="audioAyuda1Todo" src="./multimedia/audios/ayuda1Todo.ogg"></audio>
 
                     </div>
 
@@ -272,7 +274,7 @@
  
                 ?>
 
-                    <audio id="pregunta1" src="./multimedia/audios/selecciona-vocal.ogg" controls></audio>
+                    <audio id="pregunta1" src="./multimedia/audios/selecciona-vocal.ogg" controls autoplay></audio>
                 <?php
 
                     }
@@ -282,7 +284,7 @@
 
                     ?>
 
-                        <audio id="pregunta1" src="./multimedia/audios/escribe-vocal.ogg" controls></audio>
+                        <audio id="pregunta1" src="./multimedia/audios/escribe-vocal.ogg" controls autoplay></audio>
 
                     <?php
 
@@ -316,7 +318,7 @@
 
                 ?>
 
-                    <audio id="pregunta2" controls></audio>
+                    <audio id="pregunta2" controls autoplay></audio>
 
                 <?php
 
@@ -400,6 +402,9 @@
 
     </div>
 
+    <audio id="errorAnimos" src="./multimedia/audios/errorAnimos.ogg"></audio>
+    <audio id="exitoAnimos" src="./multimedia/audios/exitoAnimos.ogg"></audio>
+
 </body>
 <footer>
 
@@ -413,5 +418,4 @@
 
 <!-- Propio -->
 <script src="./js/eventos.js"></script>
-
 </html>

@@ -15,11 +15,17 @@ var ayudaCorrecta       = ""
 
 var relojActual
 
-let apertura        = document.getElementById("apertura")
-let responsabilidad = document.getElementById("responsabilidad")
-let sociabilidad    = document.getElementById("sociabilidad")
-let amabilidad      = document.getElementById("amabilidad")
-let neuroticismo    = document.getElementById("neuroticismo")
+let apertura        = document.getElementById("apertura").value
+let responsabilidad = document.getElementById("responsabilidad").value
+let sociabilidad    = document.getElementById("sociabilidad").value
+let amabilidad      = document.getElementById("amabilidad").value
+let neuroticismo    = document.getElementById("neuroticismo").value
+
+let errorAnimos     = document.getElementById("errorAnimos")
+let exitoAnimos     = document.getElementById("exitoAnimos")
+
+let audioAyuda1     = document.getElementById("audioAyuda1")
+let audioAyuda1Todo = document.getElementById("audioAyuda1Todo")
 
 function reloj()
 {
@@ -66,6 +72,7 @@ function ayudas()
         if(indiceAyudasMostradas.length == respuestasActuales.length - 1)
         {
 
+            audioAyuda1Todo.play()
             return
 
         }
@@ -90,6 +97,8 @@ function ayudas()
 
         imagenActual.src = " ./multimedia/imagenes/incorrecto.png"
         imagenActual.parentNode.style = "cursor: not-allowed; pointer-events: none;"
+
+        audioAyuda1.play()
 
     }
 
@@ -171,12 +180,33 @@ function evaluarRespuesta(evento)
     if(respuesta.toUpperCase() != respuestaCorrecta.toUpperCase())
     {
 
+        debugger
+
         errores()
 
-        Swal.fire({
-            icon: 'error',
-            confirmButtonText: "OK"
-        })
+        if(neuroticismo.toLowerCase() == "si")
+        {
+
+            Swal.fire({
+                imageUrl: './multimedia/imagenes/errorAnimos.png',
+                imageWidth: 300,
+                imageHeight: 300,
+                // reproduce el audio cuando se muestra el Swal
+                didOpen: () => {
+                    errorAnimos.play();
+                }
+              })
+
+        }
+        else
+        {
+
+            Swal.fire({
+                icon: 'error',
+                confirmButtonText: "OK"
+            })
+
+        }
 
         return
 
@@ -190,39 +220,40 @@ function evaluarRespuesta(evento)
 
     Swal.fire({
         icon: 'success',
-        confirmButtonText: "OK"
+        confirmButtonText: "OK",
+        // reproduce el audio cuando se muestra el Swal
+        didOpen: () => {
+            if(neuroticismo.toLowerCase() == "si")
+                exitoAnimos.play();
+        }
     }).then(resultado => {
 
-        if(resultado.value){
+        var complejidadNueva = obtenerDificultad(valorCrips)
+        
+        if(complejidadNueva == complejidad)
+        {
 
-            var complejidadNueva = obtenerDificultad(valorCrips)
-            
-            if(complejidadNueva == complejidad)
+            if(!restanPreguntas())
             {
 
-                if(!restanPreguntas())
-                {
-
-                    window.location.href = "terminado.html"
-                    return
-
-                }
-
-                preguntaRespuestaAyudaCorrecta()
-
-                reiniciarContadores()
-
-                mostrarPregunta()
-                mostrarRespuesta()
-                mostrarAyuda()
-                
+                window.location.href = "terminado.html"
                 return
 
             }
 
-            window.location.href = `actividades.php?complejidad=${complejidadNueva}&apertura=${apertura.value}&responsabilidad=${responsabilidad.value}&sociabilidad=${sociabilidad.value}&amabilidad=${amabilidad.value}&neuroticismo=${neuroticismo.value}`
+            preguntaRespuestaAyudaCorrecta()
+
+            reiniciarContadores()
+
+            mostrarPregunta()
+            mostrarRespuesta()
+            mostrarAyuda()
+            
+            return
 
         }
+
+        window.location.href = `actividades.php?complejidad=${complejidadNueva}&apertura=${apertura}&responsabilidad=${responsabilidad}&sociabilidad=${sociabilidad}&amabilidad=${amabilidad}&neuroticismo=${neuroticismo}`
 
     })
 
